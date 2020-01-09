@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tab_google_address_autocomplete" translate="label" sortOrder="10">
+            <label>Snapperit Google Map Config</label>
+        </tab>
+        <section id="google_address_autocomplete" translate="label" type="text" sortOrder="20" showInDefault="1" >
+            <label>Google Map API Configuration</label>
+            <tab>tab_google_address_autocomplete</tab>
+            <resource>Snapperit_CheckoutAddressAutopopulate::config_address_autocomplete</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1"  >
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1"  canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_key" translate="label comment" type="text" sortOrder="20" showInDefault="1" canRestore="1">
+                    <label>Maps JavaScript API</label>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

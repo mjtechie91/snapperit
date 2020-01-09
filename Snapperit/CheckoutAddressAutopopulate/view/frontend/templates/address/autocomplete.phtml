@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var $block Snapperit\CheckoutAddressAutopopulate\Block\Address\Autocomplete
+ */
+$addressAutocompleteStatus = $block->showAddressAutocomplete();
+$apiKey = $block->getApiKey();
+?>
+<?php if ($addressAutocompleteStatus): ?>
+    <script>
+        require.config({
+            map: {
+                "*": {
+                    "googleMapPlaceLibrary": "https://maps.googleapis.com/maps/api/js?key=<?= $apiKey?>&v=3.exp&libraries=places&language=<?= $block->getLocate();?>"
+                }
+            }
+        });
+    </script>
+    <?php if ($block->isCheckoutPage()): ?>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+          
+                "checkoutAddressAutofill": {
+                    "countries": "<?= $block->getCountriesAllowed(); ?>"
+                }           
+            }
+        }
+    </script>
+    <?php endif; ?>
+<?php endif; ?>

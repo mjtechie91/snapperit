@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <google_address_autocomplete>
+            <general>
+                <enable>1</enable>
+            </general>
+            <general>
+                <api_key>AIzaSyC3caZ7xA_jHDXASVwr4snmb1WHpNsDJ-c</api_key>
+            </general>
+        </google_address_autocomplete>
+    </default>
+</config>
